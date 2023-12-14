@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Classification</title>
+</head>
+<body>
+    <h1>Image Classification</h1>
+
+    <!-- Klik predict -->
+    <form action="/predict" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".jpg, .jpeg, .png" onchange="previewImage(event)">
+        <button type="submit">Predict</button>
+    </form>
+
+    <!-- tampil image -->
+    <div>
+        <h2>Selected Image:</h2>
+        <img id="selected-image" src="" alt="Selected Image" style="max-width: 300px; margin-top: 10px;">
+    </div>
+
+    <!-- select image -->
+    <script>
+        function previewImage(event) {
+            var input = event.target;
+            var imageContainer = document.getElementById('selected-image');
+            var image = input.files[0];
+
+            if (image) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    imageContainer.src = e.target.result;
+                }
+                reader.readAsDataURL(image);
+            } else {
+                imageContainer.src = "";
+            }
+        }
+    </script>
+</body>
+</html>
+
