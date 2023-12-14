@@ -1,5 +1,5 @@
 # Praktikum ML Modul 6
-Nama  : Ertha Risky Pratisca
+Nama  : Ertha Risky Pratisca\n
 NIM   : 202010370311129
 
 ## Dataset
